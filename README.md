@@ -1,2 +1,2 @@
 # ionic-app
-Ionic Frameworkqqqq
+Ionic Framework
