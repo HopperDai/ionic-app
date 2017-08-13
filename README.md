@@ -1,4 +1,4 @@
-# onic-app
+# Ionic-app
 
 ## Overview
 
