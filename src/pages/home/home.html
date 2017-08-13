@@ -1,10 +1,8 @@
 <ion-header>
   <ion-navbar>
-    <ion-buttons start>
-      <button ion-button menuToggle icon-only>
-        <ion-icon name="menu"></ion-icon>
-      </button>
-    </ion-buttons>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
@@ -20,7 +18,7 @@
     update any existing page or create new pages.
   </p>
 </ion-content>
-<ion-menu [content]="content">
+<ion-menu [content]="content" type="overlay">
   <ion-header>
     <ion-toolbar>
       <ion-title>Menu</ion-title>
