@@ -10,6 +10,9 @@ import {TabsPage} from '../pages/tabs/tabs';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
+import {NativeService} from "../providers/NativeService";
+import {IonicStorageModule} from '@ionic/storage';
+import {LoginPageModule} from "../pages/login/login.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import {SplashScreen} from '@ionic-native/splash-screen';
     IonicModule.forRoot(MyApp, {
       mode: 'ios',
       backButtonText: ''
-    })
+    }),
+    IonicStorageModule.forRoot(),
+    LoginPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +42,8 @@ import {SplashScreen} from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NativeService,
   ]
 })
 export class AppModule {
