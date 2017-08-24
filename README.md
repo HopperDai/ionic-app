@@ -22,3 +22,11 @@
 
 * 整理navCtr  
 will: load param(如有下一级：建议放在构造函数中。push的时候回触发构造函数，pop的时候不会触发) ;did:init data
+
+* storage  
+使用缓存要在app-module中forRoot
+
+* async函数  
+promise和then  
+observable和subscribe  
+cardIO

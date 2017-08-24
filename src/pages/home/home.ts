@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {NavController, MenuController} from 'ionic-angular';
+import {Component, ViewChild, ElementRef} from '@angular/core';
+import {NavController, MenuController, Searchbar} from 'ionic-angular';
+
 // import {TabsPage} from "../tabs/tabs";
 
 @Component({
@@ -8,10 +9,17 @@ import {NavController, MenuController} from 'ionic-angular';
 })
 export class HomePage {
   // rootPage: any = TabsPage;
+  @ViewChild('searchbar') searchBar: Searchbar;
 
-  constructor(public navCtrl: NavController,
-              public menuCtrl: MenuController) {
-    // menuCtrl.enable(true);
+  constructor(public navCtrl: NavController) {
+  }
+
+  ionViewDidEnter() {
+    // console.log(this.searchBar.nativeElement);
+    // this.searchBar.setFocus();
+    setTimeout(() => {
+      this.searchBar.setFocus();
+    });
   }
 
 }
