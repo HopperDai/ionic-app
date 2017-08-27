@@ -19,9 +19,10 @@ export class HomePage {
   initMap() {
     let map = new AMap.Map('map'); // 引号中的变量名为初始化地图的时候使用，不需要是html中的DOM id
     map.plugin('AMap.Geolocation', () => {
-      let geoLocation = new AMap.Geolocation();
+      let geoLocation = new AMap.Geolocation({});
       map.addControl(geoLocation);
       geoLocation.getCurrentPosition((status, result) => {
+        let addr = result.formattedAddress.replace('广东省广州市','');
         debugger;
       })
     });
