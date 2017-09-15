@@ -12,7 +12,10 @@ import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {NativeService} from "../providers/NativeService";
 import {IonicStorageModule} from '@ionic/storage';
-import {LoginPageModule} from "../pages/login/login.module";
+import {LoggerProvider} from '../providers/logger/logger';
+import {HttpModule} from "@angular/http";
+
+// import {LoginPageModule} from "../pages/login/login.module";
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import {LoginPageModule} from "../pages/login/login.module";
       backButtonText: ''
     }),
     IonicStorageModule.forRoot(),
-    LoginPageModule
+    HttpModule,
+    // LoginPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,6 +48,7 @@ import {LoginPageModule} from "../pages/login/login.module";
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NativeService,
+    LoggerProvider,
   ]
 })
 export class AppModule {
