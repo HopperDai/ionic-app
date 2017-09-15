@@ -12,7 +12,6 @@ import 'rxjs/add/operator/map';
 export class LoggerProvider {
 
   constructor(public http: Http) {
-    console.log('Hello LoggerProvider Provider');
   }
 
   log(msg: any) {

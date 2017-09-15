@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 
 import {FormBuilder, FormGroup, FormArray} from '@angular/forms';
+import {LoggerProvider} from "../../providers/logger/logger";
 
 // declare var AMap;
 
@@ -20,9 +21,10 @@ export class HomePage {
   }
 
   constructor(public navCtrl: NavController,
-              public fb: FormBuilder) {
+              public fb: FormBuilder,
+              public logger: LoggerProvider) {
     this.initForm();
-
+    this.logger.log('home page');
   }
 
   ionViewDidEnter() {
