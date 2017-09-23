@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
+import {NavController, AlertController} from 'ionic-angular';
 
 import {FormBuilder, FormGroup, FormArray} from '@angular/forms';
 
@@ -20,7 +20,8 @@ export class HomePage {
   }
 
   constructor(public navCtrl: NavController,
-              public fb: FormBuilder) {
+              public fb: FormBuilder,
+              public alertCtrl: AlertController) {
     this.initForm();
 
   }
@@ -92,6 +93,7 @@ export class HomePage {
   get arr(): FormArray {
     return this.testForm.get('arr') as FormArray;
   };
+
 
 }
 
