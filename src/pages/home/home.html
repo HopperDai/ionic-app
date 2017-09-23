@@ -3,23 +3,90 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>高德地图</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-searchbar autofocus="autofocus" #searchbar></ion-searchbar>
+<ion-content>
+  <form [formGroup]="testForm">
+    <div formArrayName="arr">
+      <div *ngFor="let item of arr.controls;let i = index" [formGroupName]="i">
+        <ion-input formControlName="street"></ion-input>
+        <ion-input formControlName="city"></ion-input>
+        <ion-input formControlName="state"></ion-input>
+        <ion-input formControlName="zip"></ion-input>
+      </div>
+    </div>
+    <button ion-button (click)="value()">formValue</button>
+    <button ion-button (click)="add()">addValue</button>
+  </form>
+  <div>
+    <ion-item-divider>
+      api
+    </ion-item-divider>
+    <ion-grid>
+      <ion-row>
+        一般情况下，使用web端api
+      </ion-row>
+      <ion-row>
+        定位和导航实用android和ios api
+      </ion-row>
+    </ion-grid>
+    <!--<ion-item-divider>-->
+      <!--key-->
+    <!--</ion-item-divider>-->
+  </div>
+  <!--<div id="map"></div>-->
+  <ion-item-divider>时间轴</ion-item-divider>
+  <div class="time-shaft">
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-1 class="shaft-decorate">
+          <div></div>
+          <div class="point"></div>
+        </ion-col>
+        <ion-col>11111</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1 class="shaft-decorate">
+          <div></div>
+        </ion-col>
+        <ion-col>
+          <p>11111</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1 class="shaft-decorate">
+          <div></div>
+          <div class="point"></div>
+        </ion-col>
+        <ion-col>11111</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1 class="shaft-decorate">
+          <div></div>
+        </ion-col>
+        <ion-col>
+          <p>11111</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
+
 <ion-menu [content]="content" type="overlay">
   <ion-header>
     <ion-toolbar>
-      <ion-title>Menu</ion-title>
+      <ion-title>Tech Menu</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content>
     <ion-list>
       <button ion-item>
         Home
+      </button>
+      <button ion-item>
+        Ionic
       </button>
       <button ion-item>
         Friends

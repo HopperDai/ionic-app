@@ -16,6 +16,5 @@ export class NativeService {
         resolve(res); // 已登录就返回用户信息
       })
     })
-
   }
 }
